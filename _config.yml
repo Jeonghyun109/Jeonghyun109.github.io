@@ -1,7 +1,7 @@
-title: Minimalistic
+title: JJeong's blog
 logo: /assets/img/logo.jpg
-email: person@address.com
-description: Minimalistic is a theme powered by Jekyll.
+email: kjhrlawjdgus@kaist.ac.kr
+description: 개발 블로그
 favicon: true
 color-scheme: auto
 
@@ -13,10 +13,10 @@ plugins:
 platforms:
   - name: GitHub
     icon: <i class="fa-brands fa-github"></i>
-    link: https://github.com/vaibhavvikas
-  - name: LinkedIn
-    icon: <i class="fa-brands fa-linkedin"></i>
-    link: https://www.linkedin.com/in/vaibhavvikas
+    link: https://github.com/Jeonghyun109
+  # - name: LinkedIn
+  #   icon: <i class="fa-brands fa-linkedin"></i>
+  #   link: https://www.linkedin.com/in/vaibhavvikas
 
 navigation:
   - name: Readme
