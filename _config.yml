@@ -1,5 +1,5 @@
 title: JJeong's blog
-logo: /assets/img/logo.jpg
+logo: /assets/img/redwit-julia.png
 email: kjhrlawjdgus@kaist.ac.kr
 description: 개발 블로그
 favicon: true
@@ -19,12 +19,14 @@ platforms:
   #   link: https://www.linkedin.com/in/vaibhavvikas
 
 navigation:
-  - name: Readme
+  - name: Home
     link: ./index.html
     sublist:
       - name: Image
         link: ./index.html#small-image
-  - name: Another Page
+  - name: About Me
     link: ./another-page.html
+  - name: Computer Science
+    link: ./computer-science.html
 
 remote_theme: vaibhavvikas/jekyll-theme-minimalistic
