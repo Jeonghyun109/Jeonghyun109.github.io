@@ -16,9 +16,9 @@ export const profile = {
   ],
   social: {
     email: 'jeonghyun.kim@kaist.ac.kr',
-    github: 'https://github.com/yourusername',
-    linkedin: 'https://linkedin.com/in/yourusername',
-    scholar: 'https://scholar.google.com/citations?user=yourid'
+    github: 'https://github.com/Jeonghyun109',
+    linkedin: 'https://linkedin.com/in/jeonghyun109',
+    scholar: 'https://scholar.google.com/citations?user=yourid&user=U4BoWB4AAAAJ'
   },
   researchInterests: {
     description: "My research focuses on designing and evaluating interactive systems that empower people in their daily lives, with a special interest in mental health and personalized computing.",
