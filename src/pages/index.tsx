@@ -26,10 +26,7 @@ const AboutSection = () => (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <SectionTitle title="About Me" />
       <div className="flex flex-col lg:flex-row gap-8 md:gap-12 items-start">
-        <ProfileImage 
-          name={`${profile.name} ${profile.englishName}`}
-          title={profile.title}
-        />
+        <ProfileImage />
         <div className="w-full lg:w-2/3">
           <div className="prose max-w-none">
             <About />

@@ -8,7 +8,7 @@ export default function ProjectList({ items }: { items: ProjectItem[] }) {
         <div key={i} className="bg-white border border-gray-200 rounded-2xl shadow p-6 flex flex-col md:flex-row gap-6">
           {item.image && (
             <div className="md:w-1/3 flex-shrink-0 flex items-center justify-center">
-              <img src={item.image} alt={item.title} className="rounded-lg object-fill w-full" />
+              <img src={item.image} alt={item.title as string} className="rounded-lg object-fill w-full" />
             </div>
           )}
           <div className="flex-1">
