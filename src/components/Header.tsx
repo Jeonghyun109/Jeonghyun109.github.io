@@ -7,7 +7,7 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link href="/">
-            <Image src="/main_logo.png" alt="Logo" width={180} height={120} className="w-auto h-auto" />
+            <Image src="/main_logo.png" alt="Logo" width={180} height={120} className="h-auto" />
           </Link>
           
           <div className="flex items-center space-x-4">
