@@ -75,8 +75,6 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
-      - name: Export static HTML
-        run: ${{ steps.detect-package-manager.outputs.runner }} next export
       - name: Add CNAME file
         run: echo 'jeonghyun109.com' > ./out/CNAME
       - name: Upload artifact
