@@ -20,7 +20,7 @@ export const news: NewsItem[] = [
     content: React.createElement(React.Fragment, null, 'Visited ', React.createElement('a', { href: 'https://2024summer.sigchi.kr/', className: 'hover:text-blue-600 hover:underline', target: '_blank', rel: 'noopener noreferrer' }, 'SIGCHI Korea Local Chapter Summer Event'), ' in Busan'),
   },
   {
-    date: '2025.07',
+    date: '2024.07',
     content: React.createElement(React.Fragment, null, 'Received a NRF grant for my master\'s research 🎉'),
   },
   {
