@@ -1,21 +1,69 @@
-import Link from 'next/link';
 import Image from 'next/image';
 
+const scrollToSection = (sectionId: string) => {
+  const start = window.pageYOffset;
+  const duration = 500;
+  let startTime: number | null = null;
+  const headerHeight = 64; // Height of the header (h-16 = 64px)
+
+  const easeOutCubic = (t: number): number => {
+    return 1 - Math.pow(1 - t, 3);
+  };
+
+  const animation = (currentTime: number) => {
+    if (startTime === null) startTime = currentTime;
+    const timeElapsed = currentTime - startTime;
+    const progress = Math.min(timeElapsed / duration, 1);
+    
+    const target = sectionId === 'about' ? 0 : 
+      (document.getElementById(sectionId)?.offsetTop ?? 0) - headerHeight - 32;
+    const distance = target - start;
+    
+    window.scrollTo(0, start + (distance * easeOutCubic(progress)));
+
+    if (timeElapsed < duration) {
+      requestAnimationFrame(animation);
+    }
+  };
+
+  requestAnimationFrame(animation);
+};
+
 const Header = () => {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    scrollToSection(sectionId);
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <Link href="/">
+          <a 
+            href="#about" 
+            onClick={(e) => handleNavClick(e, 'about')}
+            className="cursor-pointer"
+          >
             <Image src="/main_logo.png" alt="Logo" width={180} height={120} className="h-auto" />
-          </Link>
+          </a>
           
           <div className="flex items-center space-x-4">
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-4">
-              <a href="#about" className="text-gray-600 hover:text-blue-600 transition-colors font-medium">About Me</a>
-              <a href="#news" className="text-gray-600 hover:text-blue-600 transition-colors font-medium">News</a>
-              <a href="#projects" className="text-gray-600 hover:text-blue-600 transition-colors font-medium">Projects</a>
+              <a 
+                href="#news" 
+                onClick={(e) => handleNavClick(e, 'news')}
+                className="text-gray-600 hover:text-blue-600 transition-colors font-medium"
+              >
+                News
+              </a>
+              <a 
+                href="#projects" 
+                onClick={(e) => handleNavClick(e, 'projects')}
+                className="text-gray-600 hover:text-blue-600 transition-colors font-medium"
+              >
+                Projects
+              </a>
             </nav>
 
             {/* CV Button - Always visible */}
