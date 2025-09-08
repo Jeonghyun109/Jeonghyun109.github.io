@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 const scrollToSection = (sectionId: string) => {
@@ -30,10 +31,34 @@ const scrollToSection = (sectionId: string) => {
 };
 
 const Header = () => {
+
+  const [activeSection, setActiveSection] = React.useState<string>('about');
+
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
     e.preventDefault();
     scrollToSection(sectionId);
+    setActiveSection(sectionId);
   };
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['about', 'news', 'projects'];
+      const headerHeight = 64;
+      const scrollY = window.scrollY + headerHeight + 40;
+      let currentSection = 'about';
+      for (const section of sections) {
+        const el = document.getElementById(section);
+        if (el) {
+          if (scrollY >= el.offsetTop) {
+            currentSection = section;
+          }
+        }
+      }
+      setActiveSection(currentSection);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm shadow-sm">
@@ -50,17 +75,25 @@ const Header = () => {
           <div className="flex items-center space-x-4">
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-4">
-              <a 
-                href="#news" 
+              <a
+                href="#news"
                 onClick={(e) => handleNavClick(e, 'news')}
-                className="text-gray-600 hover:text-blue-600 transition-colors font-medium"
+                className={`transition-colors ${
+                  activeSection === 'news'
+                    ? 'font-bold text-blue-600'
+                    : 'text-gray-600 hover:text-blue-600'
+                }`}
               >
                 News
               </a>
-              <a 
-                href="#projects" 
+              <a
+                href="#projects"
                 onClick={(e) => handleNavClick(e, 'projects')}
-                className="text-gray-600 hover:text-blue-600 transition-colors font-medium"
+                className={`transition-colors ${
+                  activeSection === 'projects'
+                    ? 'font-bold text-blue-600'
+                    : 'text-gray-600 hover:text-blue-600'
+                }`}
               >
                 Projects
               </a>

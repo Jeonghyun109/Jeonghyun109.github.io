@@ -16,6 +16,12 @@ export const awards: AwardItem[] = [
     title: "Outstanding TA Award",
     description: "Teaching assistant for CS206 Data Structure course",
     issuer: "KAIST",
+    date: "2025.07",
+  },
+  {
+    title: "Outstanding TA Award",
+    description: "Teaching assistant for CS206 Data Structure course",
+    issuer: "KAIST",
     date: "2024.08",
   },
   {
