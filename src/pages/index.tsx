@@ -152,9 +152,24 @@ const TabbedSection = ({ activeTab, setActiveTab }: { activeTab: TabType, setAct
   );
 };
 
+const LastUpdated = () => {
+  return (
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="flex justify-end pb-2">
+        <span className="text-gray-400 text-xs md:text-sm">Last updated: September 8, 2025</span>
+      </div>       
+    </div>
+
+  );
+};
+
 const Footer = () => (
-  <footer className="mt-12 md:mt-16 py-4 md:py-6 bg-white border-t border-gray-200 text-center text-gray-500 text-xs md:text-sm">
-    Copyright © 2025 Jeonghyun Kim. All rights reserved.
+  <footer className="mt-12 md:mt-16 py-4 md:py-6 bg-white border-t border-gray-200">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="text-center text-gray-500 text-xs md:text-sm">
+        <p>Copyright © 2025 Jeonghyun Kim. All rights reserved.</p>
+      </div>
+    </div>
   </footer>
 );
 
@@ -168,6 +183,7 @@ const PersonalPage = () => {
       <ResearchInterestsSection />
       <EducationSection />
       <TabbedSection activeTab={activeTab} setActiveTab={setActiveTab} />
+      <LastUpdated />
       <Footer />
     </div>
   );
