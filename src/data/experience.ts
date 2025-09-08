@@ -40,23 +40,23 @@ export const experience: ExperienceItem[] = [
   },
   {
     title: 'ReDWit, Development Team',
-    position: 'CUop Internship',
+    position: 'Internship',
     location: 'Daejeon, Korea',
     period: '2022.09 - 2022.12',
     bullets: [
-      'Developed an in-house attendance management web service',
-      'Redesigned and improved a Slack bot',
-      'Implemented update features and fixed bugs for the electronic lab notebook service "GOONO"',
+      'Contributed to the GOONO 3.0 update, an electronic lab notebook service',
+      'Integrated React Query into the project',
     ],
   },
   {
     title: 'ReDWit, Development Team',
-    position: 'Internship',
+    position: 'CUop Internship',
     location: 'Daejeon, Korea',
     period: '2021.12 - 2022.02',
     bullets: [
-      'Contributed to the GOONO 3.0 update, an electronic lab notebook service',
-      'Integrated React Query into the project',
+      'Developed an in-house attendance management web service',
+      'Redesigned and improved a Slack bot',
+      'Implemented update features and fixed bugs for the electronic lab notebook service "GOONO"',
     ],
   },
 ]; 
