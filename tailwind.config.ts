@@ -24,9 +24,10 @@ export default {
     extend: {
       colors: {
         background: "var(--background)",
-        foreground: "var(--foreground)",
+        // foreground: "var(--foreground)", // inactivate dark mode
       },
     },
   },
   plugins: [],
+  darkMode: "selector",
 } satisfies Config;
